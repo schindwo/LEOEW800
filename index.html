@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fahrzeugkontakt</title>
+ 
+<style>
+* {
+box-sizing: border-box;
+}
+ 
+body {
+margin: 0;
+padding: 20px;
+font-family: Arial, Helvetica, sans-serif;
+background: #f5f5f5;
+color: #333;
+}
+ 
+.container {
+max-width: 500px;
+margin: 0 auto;
+background: #fff;
+padding: 24px;
+border-radius: 12px;
+box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+ 
+h1 {
+text-align: center;
+margin-top: 0;
+}
+ 
+p {
+text-align: center;
+line-height: 1.4;
+}
+ 
+label {
+display: block;
+margin-top: 16px;
+margin-bottom: 6px;
+font-weight: bold;
+}
+ 
+select,
+textarea,
+input {
+width: 100%;
+padding: 14px;
+border: 1px solid #ccc;
+border-radius: 8px;
+font-size: 16px;
+}
+ 
+textarea {
+min-height: 120px;
+resize: vertical;
+}
+ 
+button {
+width: 100%;
+padding: 22px;
+margin-top: 30px;
+border: 0;
+border-radius: 12px;
+background: #28a745;
+color: white;
+font-size: 22px;
+font-weight: bold;
+cursor: pointer;
+min-height: 70px;
+}
+button:hover {
+background: #218838;
+}
+ 
+.info {
+margin-top: 12px;
+font-size: 14px;
+color: #666;
+text-align: center;
+}
+ 
+@media (prefers-color-scheme: dark) {
+ 
+body {
+background: #1a1a1a;
+color: #eee;
+}
+ 
+.container {
+background: #2a2a2a;
+}
+ 
+select,
+textarea,
+input {
+background: #333;
+color: #fff;
+border-color: #555;
+}
+}
+</style>
+ 
+</head>
+<body>
+ 
+<div class="container">
+ 
+<h1><center>Halter von</center></h1>
+<h1><center>🚐 LEO EW800</center></h1>
+<h1><center>kontaktieren</center></h1>
+ 
+<p>
+Haben Sie ein Anliegen zu diesem Fahrzeug?<br>
+Bitte beschreiben Sie Ihr Anliegen kurz.
+</p>
+ 
+<form
+action="https://formspree.io/f/mwlpavol"
+method="POST">
+ 
+<label for="grund">Grund</label>
+ 
+<select id="grund" name="Grund">
+< <option>Fahrzeug beschädigt</option>
+<option>Parkproblem</option>
+<option>Unfall / Vorfall</option>
+<option>Sonstiges</option>
+</select>
+ 
+<label for="nachricht">Nachricht</label>
+ 
+<textarea
+id="nachricht"
+name="Nachricht"
+placeholder="Bitte kurz beschreiben..."
+required></textarea>
+ 
+<label for="kontakt">E-Mail oder Telefon (optional)</label>
+ 
+<input
+type="text"
+id="kontakt"
+name="Kontakt"
+placeholder="Für Rückfragen">
+ 
+<!-- GPS-Koordinaten -->
+<input type="hidden" id="gps" name="Standort">
+ 
+<!-- Spam-Schutz -->
+<input
+type="text"
+name="_gotcha"
+style="display:none">
+ 
+<!-- Formspree Einstellungen -->
+<input
+type="hidden"
+name="_subject"
+value="Neue Nachricht über Fahrzeug-QR-Code">
+ 
+<button type="submit">
+🚐 Fahrzeughalter informieren
+</button>
+ 
+</form>
+ 
+</div>
+ 
+<script>
+if ("geolocation" in navigator) {
+navigator.geolocation.getCurrentPosition(
+function(position) {
+document.getElementById("gps").value =
+position.coords.latitude + ", " +
+position.coords.longitude;
+},
+function(error) {
+console.log("GPS nicht verfügbar:", error.message);
+}
+);
+}
+</script>
+ 
+</body>
+</html>
