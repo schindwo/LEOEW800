@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <!-- Optimierung für Smartphones -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Volkswagen Passat W8</title>
+
+
+    <style>
+
+        /* =====================================================
+           GRUNDEINSTELLUNGEN
+           ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background: #ffffff;
+            color: #222;
+        }
+
+
+        /* =====================================================
+           HEADER
+           ===================================================== */
+
+        header {
+            background: #111;
+            color: #fff;
+
+            padding: 18px 20px 16px 20px;
+        }
+
+        header h1 {
+            margin: 0;
+
+            font-size: 22px;
+            line-height: 1.2;
+
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+
+            font-size: 11px;
+            color: #ccc;
+        }
+
+
+        /* =====================================================
+           HAUPTBEREICH
+           ===================================================== */
+
+        main {
+            width: 100%;
+            max-width: 760px;
+
+            margin: 0 auto;
+
+            padding: 12px 20px 30px 20px;
+        }
+
+
+        /* =====================================================
+           HAUPTBILD - PLATZHALTER
+           ===================================================== */
+
+        .image-placeholder {
+            width: 100%;
+            height: 260px;
+
+            background: #e8e8e8;
+
+            border: 1px solid #d0d0d0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            color: #888;
+
+            font-size: 12px;
+
+            text-align: center;
+
+            margin-bottom: 14px;
+        }
+
+        .image-placeholder span {
+            padding: 10px;
+        }
+
+
+        /* =====================================================
+           ABSCHNITTSÜBERSCHRIFT
+           ===================================================== */
+
+        .section-title {
+            font-size: 12px;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            border-bottom: 2px solid #ccc;
+
+            padding-bottom: 5px;
+
+            margin-top: 12px;
+            margin-bottom: 10px;
+        }
+
+
+        /* =====================================================
+           TECHNISCHE DATEN
+           ===================================================== */
+
+        .specifications {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .spec-column {
+            font-size: 11px;
+        }
+
+        .spec-item {
+            margin-bottom: 7px;
+        }
+
+        .spec-label {
+            font-weight: bold;
+        }
+
+        .spec-value {
+            color: #444;
+        }
+
+
+        /* =====================================================
+           INFOBOX
+           ===================================================== */
+
+        .info-box {
+            background: #f1f1f1;
+
+            border: 1px solid #d0d0d0;
+
+            border-radius: 7px;
+
+            padding: 13px;
+
+            margin-top: 15px;
+        }
+
+        .info-box h2 {
+            font-size: 11px;
+
+            margin: 0 0 8px 0;
+
+            text-transform: uppercase;
+        }
+
+        .info-box p {
+            font-size: 10px;
+
+            line-height: 1.5;
+
+            margin: 0 0 8px 0;
+        }
+
+        .info-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight {
+            font-weight: bold;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =====================================================
+           INHALTSABSCHNITTE
+           ===================================================== */
+
+        .content-section {
+            margin-top: 22px;
+        }
+
+        .content-section h2 {
+            font-size: 12px;
+
+            text-transform: uppercase;
+
+            margin: 0 0 4px 0;
+        }
+
+        .content-section .subtitle {
+            font-size: 10px;
+
+            color: #666;
+
+            margin-bottom: 9px;
+        }
+
+        .content-section p {
+            font-size: 11px;
+
+            line-height: 1.5;
+
+            margin: 0 0 10px 0;
+        }
+
+
+        /* =====================================================
+           BILD + TEXT
+           ===================================================== */
+
+        .image-text {
+            display: flex;
+
+            gap: 12px;
+
+            align-items: flex-start;
+        }
+
+        .image-text .text {
+            flex: 1;
+        }
+
+        .small-image-placeholder {
+            width: 90px;
+            height: 70px;
+
+            flex-shrink: 0;
+
+            background: #e8e8e8;
+
+            border: 1px solid #d0d0d0;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            color: #888;
+
+            font-size: 9px;
+        }
+
+
+        /* =====================================================
+           TRENNLINIE
+           ===================================================== */
+
+        .separator {
+            height: 1px;
+
+            background: #ddd;
+
+            margin: 20px 0;
+        }
+
+
+        /* =====================================================
+           ZURÜCK-BUTTON
+           ===================================================== */
+
+        .back-button-container {
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        .back-button {
+            display: block;
+
+            width: 100%;
+
+            padding: 14px 16px;
+
+            background: #111;
+            color: #fff;
+
+            text-align: center;
+
+            text-decoration: none;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            border-radius: 7px;
+
+            transition: background 0.2s;
+        }
+
+        .back-button:hover {
+            background: #333;
+        }
+
+        .back-button:active {
+            background: #555;
+        }
+
+
+        /* =====================================================
+           FOOTER
+           ===================================================== */
+
+        footer {
+            border-top: 1px solid #ccc;
+
+            margin-top: 25px;
+
+            padding-top: 8px;
+
+            font-size: 9px;
+
+            color: #777;
+
+            line-height: 1.4;
+        }
+
+
+        /* =====================================================
+           SMARTPHONE
+           ===================================================== */
+
+        @media (max-width: 500px) {
+
+            header {
+                padding: 16px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            main {
+                padding: 10px 16px 25px 16px;
+            }
+
+
+            /* Hauptbild */
+
+            .image-placeholder {
+                height: 220px;
+            }
+
+
+            /* ---------------------------------------------
+               TECHNISCHE DATEN EINSPALTIG
+               --------------------------------------------- */
+
+            .specifications {
+                display: block;
+            }
+
+            .spec-column {
+                font-size: 11px;
+            }
+
+            .spec-item {
+                display: flex;
+
+                align-items: baseline;
+
+                gap: 5px;
+
+                margin-bottom: 8px;
+            }
+
+            .spec-label {
+                white-space: nowrap;
+            }
+
+            .spec-label::after {
+                content: " ·";
+            }
+
+
+            /* Kleine Bilder */
+
+            .small-image-placeholder {
+                width: 80px;
+                height: 65px;
+            }
+
+        }
+
+
+        /* =====================================================
+           TABLET / DESKTOP
+           ===================================================== */
+
+        @media (min-width: 800px) {
+
+            main {
+                padding-top: 20px;
+            }
+
+            .image-placeholder {
+                width: 70%;
+
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header>
+
+        <h1>
+            VOLKSWAGEN PASSAT W8
+        </h1>
+
+        <p>
+            A rare German engineering icon
+        </p>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         HAUPTINHALT
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             HAUPTBILD
+             ================================================= -->
+
+        <div class="image-placeholder">
+
+            <span>
+                HAUPTBILD DES FAHRZEUGS
+            </span>
+
+        </div>
+
+
+
+        <!-- =================================================
+             TECHNISCHE DATEN
+             ================================================= -->
+
+        <div class="section-title">
+            Technical Specifications
+        </div>
+
+
+        <div class="specifications">
+
+
+            <!-- =============================================
+                 LINKE SPALTE
+                 ============================================= -->
+
+            <div class="spec-column">
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Engine
+                    </span>
+
+                    <span class="spec-value">
+                        4.0L W8
+                    </span>
+
+                </div>
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Power
+                    </span>
+
+                    <span class="spec-value">
+                        275 HP
+                    </span>
+
+                </div>
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Torque
+                    </span>
+
+                    <span class="spec-value">
+                        370 Nm
+                    </span>
+
+                </div>
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Transmission
+                    </span>
+
+                    <span class="spec-value">
+                        6-Speed Manual
+                    </span>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =============================================
+                 RECHTE SPALTE
+                 ============================================= -->
+
+            <div class="spec-column">
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Drivetrain
+                    </span>
+
+                    <span class="spec-value">
+                        AWD / 4MOTION
+                    </span>
+
+                </div>
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Production
+                    </span>
+
+                    <span class="spec-value">
+                        2001–2004
+                    </span>
+
+                </div>
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Worldwide
+                    </span>
+
+                    <span class="spec-value">
+                        Approx. 11,000 built
+                    </span>
+
+                </div>
+
+
+                <div class="spec-item">
+
+                    <span class="spec-label">
+                        Germany
+                    </span>
+
+                    <span class="spec-value">
+                        Under 700 manuals
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RARITY & SURVIVAL
+             ================================================= -->
+
+        <div class="info-box">
+
+
+            <h2>
+                Rarity & Survival
+            </h2>
+
+
+            <p>
+
+                Only around 11,000 Passat W8s were built
+                worldwide. Fewer than 700 were built in
+                Germany with the 6-speed manual transmission.
+
+            </p>
+
+
+            <p>
+
+                Most examples were equipped with a
+                5-speed automatic gearbox.
+
+            </p>
+
+
+            <p class="highlight">
+
+                This is one of only 126 W8 sedans
+                <br>
+                still driving in Germany.
+
+            </p>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             W8 MOTOR
+             ================================================= -->
+
+        <section class="content-section">
+
+
+            <h2>
+                The W8 Engine
+            </h2>
+
+
+            <div class="subtitle">
+                Compact, complex and unmistakable.
+            </div>
+
+
+            <div class="image-text">
+
+
+                <div class="text">
+
+                    <p>
+
+                        Der Volkswagen W8 ist ein
+                        außergewöhnlicher Motor.
+                        Durch seine ungewöhnliche Bauweise
+                        verbindet er acht Zylinder mit einem
+                        sehr kompakten Motorblock.
+
+                    </p>
+
+                </div>
+
+
+                <div class="small-image-placeholder">
+
+                    W8<br>
+                    MOTOR
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             TRENNLINIE
+             ================================================= -->
+
+        <div class="separator"></div>
+
+
+
+        <!-- =================================================
+             FAHRZEUGGESCHICHTE
+             ================================================= -->
+
+        <section class="content-section">
+
+
+            <h2>
+                The Passat W8
+            </h2>
+
+
+            <div class="subtitle">
+                A very special Volkswagen.
+            </div>
+
+
+            <p>
+
+                Der Passat W8 wurde von Volkswagen gebaut,
+                um einen außergewöhnlichen Achtzylinder in
+                einem vergleichsweise unauffälligen Fahrzeug
+                anzubieten.
+
+            </p>
+
+
+            <p>
+
+                Heute ist der W8 eine seltene Besonderheit
+                innerhalb der Passat-Baureihe und besonders
+                Fahrzeuge mit 6-Gang-Handschaltung sind
+                ausgesprochen interessant.
+
+            </p>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             WEITERER BILD-ABSCHNITT
+             ================================================= -->
+
+        <section class="content-section">
+
+
+            <h2>
+                Details
+            </h2>
+
+
+            <div class="subtitle">
+                Engineering and design.
+            </div>
+
+
+            <div class="image-text">
+
+
+                <div class="small-image-placeholder">
+
+                    FOTO
+
+                </div>
+
+
+                <div class="text">
+
+                    <p>
+
+                        Hier können später weitere
+                        Informationen zu besonderen
+                        technischen Details, Ausstattung
+                        oder Geschichte des Fahrzeugs
+                        eingefügt werden.
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             ZURÜCK ZUR KONTAKTSEITE
+             ================================================= -->
+
+        <div class="back-button-container">
+
+            <a href="index.html" class="back-button">
+                ← Zurück zur Kontaktseite
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FOOTER
+             ================================================= -->
+
+        <footer>
+
+            Volkswagen Passat W8
+            • 4.0L
+            • 275 HP
+            • 370 Nm
+            • 6-Speed Manual
+            • AWD / 4MOTION
+
+        </footer>
+
+
+    </main>
+
+
+</body>
+
+</html>
