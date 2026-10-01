@@ -1,0 +1,1 @@
+:root { font-family: system-ui, sans-serif; color: #e7eefb; background: #101a2b; } body { min-height: 100vh; margin: 0; display: grid; place-items: center; } .site { width: min(42rem, calc(100% - 3rem)); padding: 3rem; border: 1px solid #2d466d; border-radius: 1rem; background: #17243a; } button { padding: .7rem 1rem; cursor: pointer; }
